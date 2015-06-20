@@ -53,7 +53,7 @@ router.post('/', function(req, res, next) {
       if(err) throw err;
       fs.writeFile(message_file, JSON.stringify(messages), function(err){
         if(err) throw err;
-        fs.writeFile(count_file, JSON.stringify(count++), function(err){
+        fs.writeFile(count_file, JSON.stringify(++count), function(err){
           if(err) throw err;
         });
         res.send('' + (count-1));
